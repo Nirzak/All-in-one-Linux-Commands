@@ -288,6 +288,7 @@ To unalias type,
    The above command will get the timestamp of file1 and will assign it to file2.
 
    6. **Create file with Specific time:** The touch command with '-t' option is used to create a file with specified time.
+
    ```bash
     $ touch -t 1911010000 file_name
    ```
@@ -309,7 +310,7 @@ To unalias type,
    ```bash
     $ less largefile.txt
    ```
-Use the following command to navigate through less:
+Use the following command to navigate through less: <br />
  q - Used to quit out of less and go back to your shell.<br />
  Page up, Page down, Up and Down - Navigate using the arrow keys and page keys.<br/>
  g - Moves to beginning of the text file.<br />
