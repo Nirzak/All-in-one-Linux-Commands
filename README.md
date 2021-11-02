@@ -15,8 +15,7 @@ This whole repository is created to track all the useful linux commands in one p
 | 5   | [**Package Installing Commands**](#installing-packages)                 |
 | 6   | [**Memory Usage Commands**](#Memory-usage)                              |
 | 7   | [**System and Hardware information**](#system-and-hardware-information) |
-| 8   | [**Search Files**](#search-files)                                       |
-| 9   | [**SSH**](#ssh)                                                         |
+| 8   | [**System**](#system)                                                   |
 
 ### General Commands
 
