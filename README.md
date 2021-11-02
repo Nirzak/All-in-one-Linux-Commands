@@ -157,6 +157,8 @@ This whole repository is created to track all the useful linux commands in one p
  -rw-r--r-- 1 root root 3564 Oct 27 16:56 .bashrc
 ```
 To unalias type,
+`unalias <your alias name>`
+
 ```bash
  $ unalias nr
 ```
