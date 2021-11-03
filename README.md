@@ -137,7 +137,7 @@ This whole repository is created to track all the useful linux commands in one p
  ls: /usr/bin/ls /usr/share/man/man1/ls.1.gz
 ```
 
-13. **alias:** Rename a long repitive command with a short name. For example you can make the command ls -la to any of your suitable name like below example. Then you can use that name to use the command.
+14. **alias:** Rename a long repitive command with a short name. For example you can make the command ls -la to any of your suitable name like below example. Then you can use that name to use the command.
 
 ```bash
  $ ls -la
@@ -162,7 +162,7 @@ To unalias type,
  $ unalias nr
 ```
 
-14. **clear:** Clears the terminal
+15. **clear:** Clears the terminal
 
 ```bash
  $ clear
@@ -309,12 +309,12 @@ To unalias type,
    ```bash
     $ less largefile.txt
    ```
-Use the following command to navigate through less: <br />
- q - Used to quit out of less and go back to your shell.<br />
- Page up, Page down, Up and Down - Navigate using the arrow keys and page keys.<br/>
- g - Moves to beginning of the text file.<br />
- G - Moves to the end of the text file. <br />
- /search - You can search for specific text inside the text document. Prefacing the words you want to search with / <br />
- h - If you need a little help about how to use less while you’re in less, use help.
+   Use the following command to navigate through less: <br />
+   q - Used to quit out of less and go back to your shell.<br />
+   Page up, Page down, Up and Down - Navigate using the arrow keys and page keys.<br/>
+   g - Moves to beginning of the text file.<br />
+   G - Moves to the end of the text file. <br />
+   /search - You can search for specific text inside the text document. Prefacing the words you want to search with / <br />
+   h - If you need a little help about how to use less while you’re in less, use help.
 
 **[⬆ Back to Top](#table-of-contents)**
