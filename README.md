@@ -51,7 +51,7 @@ This whole repository is created to track all the useful linux commands in one p
 
    ```bash
     $ id
-    uid=1000(nirjas) gid=1000(nirjas) groups=1000(nirjas),4(adm),    24(cdrom),27(sudo),30(dip),46(plugdev),120(lpadmin),132(lxd),133(sambashare)
+    uid=1000(nirjas) gid=1000(nirjas) groups=1000(nirjas),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),120(lpadmin),132(lxd),133(sambashare)
    ```
 
 5. **groups:** This command is used to display all the groups for which the user belongs to.
