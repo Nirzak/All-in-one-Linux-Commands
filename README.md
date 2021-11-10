@@ -10,12 +10,13 @@ This whole repository is created to track all the useful linux commands in one p
 | --- | ----------------------------------------------------------------------- |
 | 1   | [**General Commands**](#General-commands)                               |
 | 2   | [**File Management Commands**](#File-management-commands)               |
-| 3   | [**Permission Commands**](#Permissions-based-commands)                  |
-| 4   | [**Networking Commands**](#Networking-commands)                         |
-| 5   | [**Package Installing Commands**](#installing-packages)                 |
-| 6   | [**Memory Usage Commands**](#Memory-usage)                              |
-| 7   | [**System and Hardware information**](#system-and-hardware-information) |
-| 8   | [**System**](#system)                                                   |
+| 3   | [**Text Processing**](#Text-processing)                           |
+| 4   | [**Permission Commands**](#Permissions-based-commands)                  |
+| 5   | [**Networking Commands**](#Networking-commands)                         |
+| 6   | [**Package Installing Commands**](#installing-packages)                 |
+| 7   | [**Memory Usage Commands**](#Memory-usage)                              |
+| 8   | [**System and Hardware information**](#system-and-hardware-information) |
+| 9   | [**System**](#system)                                                   |
 
 ### General Commands
 
@@ -291,23 +292,143 @@ To unalias type,
    ```bash
     $ touch -t 1911010000 file_name
    ```
-6. **cat**: The cat command is used to view contents of single or multiple files, concatenate files and redirect output in terminal or files.
+
+6. **cp**: The cp (copy) command is used to copy files and directories from one location to another location of the system.
+   1. Copy file: The cp command is used to copy a file.
+
+   ```bash
+    $ cp file1 /home/nirjas/files
+   ```
+   In this example file1 will be copied to the files directory which is at "/home/nirjas/files" path.
+   2. Copy directory: The cp command with -r option is used to copy whole directory with its files recursively.
+
+   ```bash
+    $ cp -r directory1 /home/nirjas/myfiles
+   ```
+   In this example the whole directory1 will be copied to myfiles directory.
+   3. Copy files inside directory:
+
+   ```bash
+    $ cp -r dir1/* /home/nirjas/myfiles
+   ```
+   In the above example, all the files inside dir1 will be copied myfiles folder. The dir1 will not be copied. Only the files inside it will be copied. You can also specify which files to copy by the following example.
+
+   ```bash
+    $ cp -r dir1/*.txt /home/nirjas/myfiles
+   ```
+   The above example will copy only text files. 
+
+   4. Copy files without overriding: The cp command with -i will show you interactive prompt to replace if the destination directory already has the file.
+
+   ```bash
+   cp -i myfile /home/nirjas/files
+   ```
+
+7. **mv**: The mv (copy) command usage is almost similar to the cp command and it is used to move or rename files or folders.
+   1. Rename files: mv command is also used to rename files in the following way.
+
+   ```bash
+    $ mv oldname newname
+   ```
+   In this example file1 will be copied to the files directory which is at "/home/nirjas/files" path.
+   2. Move files:
+
+   ```bash
+    $ mv file.txt /home/nirjas/myfiles
+   ```
+   You can also move mutiple files in one command.
+
+   ```bash
+    $ mv file1 file2 file3 /home/nirjas/myfiles
+   ```
+
+   3. Move Directories:
+
+   ```bash
+    $ mv dir1 /home/nirjas/myfiles
+   ``` 
+
+   4. Move files without overriding:
+
+   ```bash
+   mv -i myfile /home/nirjas/files
+   ```
+8. **cat**: The cat command is used to view contents of single or multiple files, concatenate files and redirect output in terminal or files.
 
    ```bash
     $ cat file1 file2
    ```
 
-7. **file**: The file command is used to know the file type.
+9. **file**: The file command is used to know the file type.
 
    ```bash
     $ file file1.txt
     file1.txt: ASCII text
    ```
 
-8. **less**: If a file content is very large then less can be used to view the file contents as a paged manner.
+**[⬆ Back to Top](#table-of-contents)**
+
+### Text Processing
+
+1. **cut**: The cut command is used to extract portion of texts from a file.
 
    ```bash
-    $ less largefile.txt
+    $ cut -c 4 file.txt
+   ```
+   This will show 4th character from each line of that file. You can also modify it in the follwing way to specify
+   your range.
+
+   ```bash
+    $ cut -c 4-10 file.txt
+   ```
+   Here the character range is 4-10.
+   To cut off according to fields, -f option is used.
+
+   ```bash
+    $ cut -f 2 file.txt
+   ```
+   By default it uses TABs as the delimiter. so everything separated by a TAB is considered a field.
+
+2. **paste**: The paste command is almost similar to cat command. But instead of just showing the text of the file
+it merges the lines of the file in one line. For example suppose `file1.txt` has the below text.
+
+   ```
+    Terminal
+    is
+    awesome
+   ```
+   Now apply the following command on the text file.
+
+   ```bash
+    $ paste -s file1.txt
+   ```
+   The output will be 'Terminal  is  awesome'. By default it is using TABs as the delimiter.
+   But you can set custom delimiter as the following example.
+
+   ```bash
+    $ paste -d ' ' -s file1.txt
+   ```
+   The above example will use spaces the delimiter.
+
+3. **head**: the head command is used the view the first 10 lines of a text file. It's very useful the see the contents of
+a huge log files.
+   ```bash
+    $ head /var/log/syslog
+   ```
+You can also define how many lines you want to view by the -n option.
+   ```bash
+    $ head -n 20 /var/log/syslog
+   ```
+3. **tail**: The tail command is almost similar to the head command. But instead of showing the first 10 lines,
+it will show you the last 10 lines as default.
+   ```bash
+    $ tail /var/log/syslog
+   ```
+
+4. **less**: When browsing the long log files you can use another very useful command which is called `less`. If a file content is very large then less is used to view the file contents as a paged manner.
+
+   ```bash
+    $ less /var/log/syslog
    ```
    Use the following command to navigate through less: <br />
    q - Used to quit out of less and go back to your shell.<br />
@@ -317,4 +438,141 @@ To unalias type,
    /search - You can search for specific text inside the text document. Prefacing the words you want to search with / <br />
    h - If you need a little help about how to use less while you’re in less, use help.
 
-**[⬆ Back to Top](#table-of-contents)**
+5. **expand and unexpand**: expand is used to convert all the TABs in a text file to spaces.
+
+   ```bash
+    $ expand file1.txt
+   ```
+To convert the spaces back to TABs. Use the unexpand command.
+
+   ```bash
+    $ unexpand -a file1.txt
+   ```
+5. **sort**: The sort command is used to sort the lines in a text file.
+
+   ```bash
+    $ sort file1.txt
+   ```
+To do a reverse sort the -r option is used.
+
+   ```bash
+    $ sort -r file1.txt
+   ```
+6. **tr**: the tr (translate) command is used to translate a set of character to another one.
+The following example will convert all lowercase character to uppercase one.
+
+   ```bash
+    $ tr a-z A-Z
+    terminal
+    TERMINAL
+   ```
+7. **uniq**: Just as the name says it it, the uniq (Unique) command is used to remove all the duplicate texts from a file.
+
+   ```bash
+    $ uniq file1.txt
+   ```
+8. **wc**: The wc command is used to show count of words, lines and bytes from file respectively.
+
+   ```bash
+    $ wc file1.txt
+   ```
+To see only the line counts use the following.
+
+   ```bash
+    $ wc -l file1.txt
+   ```
+Similarly, -w, -c can be used to show only count of words and bytes respectively.
+
+9. **grep**: When it comes to text processing or filtering results of other commands, grep is probably the most used
+command in such cases. The main syntax is following.
+
+   ```bash
+    $ grep pattern file
+   ```
+You can also defines the patterns that are case sensitive by -i flag.
+
+   ```bash
+    $ grep -i pattern file
+   ```
+Grep can also be used with commands as a pipeline.
+
+   ```bash
+    $ ls /nirjas/home | grep -i file1
+   ```
+The above command will show the file1 from /nirjas/home directory.
+To search for the lines which doesn't contain the particular keyword use the -v option.
+
+   ```bash
+    $ ps aux | grep -v grep
+   ```
+The above example will ignore all the grep processes and shows the others. 
+
+Grep can also be used with regular expressions.
+
+   ```bash
+    $ grep "one$" file1.txt
+   ```
+The above command will show the lines which are ending the word `one`.
+Some other useful regular expressions with grep are as follows.
+
+   1. Matching any character: To match any character with a particular word the period (.) is used.
+
+   ```bash
+    $ grep "..rent" file.txt
+   ```
+   The above command will match anything that has two characters and then the string `rent`
+
+   2. Bracket Expressions: You can also specify mutiple words with a particular character by enclosing them
+   with a bracket.
+
+   ```bash
+    $ grep "swe[ea]t" file.txt
+   ```
+   The above command will match this two words `sweet` and `sweat`
+
+   To find every line which starts with a capital letter,
+   ```bash
+    $ grep "^[A-Z]" file.txt
+   ```
+   Instead of using character ranges POSIX classes can also be used for the above example,
+
+   ```bash
+    $ grep "^[[:upper:]]" file.txt
+   ```
+   To find each line that contains an opening and closing parenthesis, with only letters and single spaces in between, the following expression can be used,
+
+   ```bash
+    $ grep "([A-Za-z ]*)" file.txt
+   ```
+   To escape meta characters, the backslash character (\) in front of the characters are used.
+
+   ```bash
+    $ grep "^[A-Z].*\.$" file.txt
+   ```
+   The above example will find any line that begins with a capital letter and ends with a period. But it escapes the ending period so that it represents a literal period.
+
+   3. Extended Regex: To use extended regular expression the -E option is used.
+   To group multiple expressions, enclose them in a paratheses. 
+
+   ```bash
+    $ grep -E "(Color|Colour)" file.txt
+   ``` 
+   The above example will find either `Color` or `Colour` from the text.
+
+   To find any words between chracter range, enclose the range with `{ }` brackets.
+
+   ```bash
+    $ grep -E "[[:alpha:]]{5,10}"
+   ```
+   The above command will find all words that have between 5-10 characters. 
+
+   To ignore any lines that are commented or blank use the following grep command,
+
+   ```bash
+    $ sudo grep -vE '^(#|$)'
+   ```
+   It's very useful to find lines in a big configuration file.
+
+
+
+
