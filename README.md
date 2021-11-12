@@ -780,6 +780,11 @@ or,
 ```bash
  $ netstat -at
 ```
+To view the active ports of the device use the following command.
+
+```bash
+ $ netstat -pnltu
+```
 
 9. **tcpdump:** The `tcpdump` is to monitor packet activities. It will not be available by default in the operating
 system. It can be installed by `sudo apt install tcpdump` command.
@@ -818,45 +823,22 @@ For more usage information use `man nmcli` command.
  $ arp -a
 ```
 
+15. **hostname:** `hostname` command can be usedful to view the device IP.
 
+```bash
+ $ hostname -I
+```
 
+16. **nmap:** The `nmap` command is used to scan open services and ports of a server.
 
+```bash
+ $ nmap -A www.nirzash.me
+```
+To view the firewall setting with all information use the following command.
 
-
-
-
-
-2.  **Test connection to a remote machine:** Send an echo request to test connection of a remote machine.
-
-    ```cmd
-    ping <ip-address> or hostname
-
-    Example:
-    ping 10.0.0.11
-    ```
-
-3.  **Show IP Address:** Display ip address of a currennt machine
-
-    ```cmd
-    hostname -I
-    (OR)
-    ip addr show
-    ```
-
-4.  **Active ports:** Shows active or listening ports
-
-     ```cmd
-     netstat -pnltu
-     ```
-
-5.  **Find information about domain:** `whois` command is used to find out information about a domain, such as the owner of the domain, the owner’s contact information, and the nameservers used by domain.
-
-    ```cmd
-    whois [domain]
-
-    Example:
-    whois google.com
-    ```
+```bash
+ $ nmap -sA www.nirzash.me
+```
 
 **[⬆ Back to Top](#table-of-contents)**
 
