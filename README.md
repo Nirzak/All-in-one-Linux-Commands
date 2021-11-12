@@ -573,6 +573,299 @@ Some other useful regular expressions with grep are as follows.
    ```
    It's very useful to find lines in a big configuration file.
 
+### Permission Commands
+Linux has four types of permissions.
+
+   r = read
+
+   w = write
+
+   x = execute
+
+   \- = no permission
+
+Each file and directory has three types of owners.
+i. **User:** Owner of the file who created it.
+ii. **Group:** Group of users with the same access permissions to the file or directory.
+iii. **Other:** Applies to all other users on the system
+
+**Changing Permission:**
+The `chmod` command is used to change file or directory permissions. There are two types of usage of this command.
+1. **Absolute mode:** In this mode file permission is represented by an octal value.
+The numeric representation of the values are the following.
+- 4: read permission
+- 2: write permission
+- 1: execute permission
+
+```bash
+ $ sudo chmod 755 myfile
+```
+The above commands means the following.
+7 = 4 + 2 + 1, 7 is the user permissions and it has read, write and execute permissions
+
+5 = 4 + 1, the group has read and execute permission
+
+5 = 4 + 1, and all other users have read and execute permissions
+
+2. **Symbolic mode:** In this mode permissions can be changed for specific owners.
+The owners are represented in below table.
+
+   | Owner | Description |
+   | ----- | ----- |
+   | u | user/owner |
+   | g | group |
+   | o | other |
+   | a | all |
+The permissions can be add, remove and assign by using mathematical symbols like as below.
+- `+` : Add permission
+- `-` : remove permission
+- `=` : Assign permission
+
+```bash
+ $ chmod u+x file
+```
+The above command will add execute permission to user. Similarly, You can add or remove permission like below examples.
+
+```bash
+ $ chmod u-x file
+```
+Removes execute permission from user.
+
+```bash
+ $ chmod ug+x file
+```
+Adds execute permission to both user and group.
+
+```bash
+ $ chmod g-w file
+```
+Removes write permission from group. 
+
+```bash
+ $ chmod o+r file
+```
+Add read permission to others. 
+
+**Changing Ownership:**
+
+**1. User ownership:** User ownership can be updated by using the `chown` command.
+
+```bash
+ $ chown user file
+```
+or,
+```bash
+ $ chown username:groupname file
+```
+**2. Group ownership:** Group ownership can be modified by using the `chgrp` command.
+
+```bash
+ $ chgrp groupname file
+```
+**[⬆ Back to Top](#table-of-contents)**
+
+### Networking Commands
+
+1.  **ifconfig:** The `ifconfig` command is used to display and configure all network interfaces.
+
+```bash
+ $ ifconfig -a
+```
+To create an interface and bring it up use the following command.
+
+```bash
+ $ ifconfig eth0 192.168.0.1 netmask 255.255.255.0 up
+```
+2. **ifup and ifdown:**
+
+```bash
+ $ ifup eth0
+ $ ifdown eth0
+```
+ifup is to enable a network device and ifdown will disable it.
+
+3. **ip command:** the `ip` command is a versatile command and is the replacement for both `ifconfig` command
+and `route` command. It can be used for mutiple puposes.
+
+**Showing interfaces:** Equavalent to `ifconfig` command.
+
+```bash
+ $ ip link show
+```
+
+**Showing interface statistics:** 
+
+```bash
+ $ ip -s link show eth0
+```
+
+**Showing ip address assigned to interfaces:** 
+
+```bash
+ $ ip address show
+```
+or,
+
+```bash
+ $ ip addr show
+```
+
+**To bring interfaces up and down:** Equlavalent to `ifup` and `ifdown` command
+
+```bash
+ $ ip link set eth0 up
+ $ ip link set eth0 down
+```
+
+**Add an IP address to an interface:** 
+
+```bash
+ $ ip address add 192.168.0.1/24 dev eth0
+```
+**Showing routing table:** Equavalent to `route` command.
+
+```bash
+ $ ip route list
+```
+
+**Add a route:** Equavalent to `route add` command.
+
+```bash
+ $ ip route add 192.168.0.1/24 via 10.10.12.3
+```
+
+**Remove a route:** Equavalent to `route del` command.
+
+```bash
+ $ ip route delete 192.168.0.1/24
+```
+4. **route command:** The `route` command is used to command is used to show, add or delete routes.
+
+**Showing routing table:** Equavalent to `route` command.
+
+```bash
+ $ sudo route -n
+```
+
+**Add a route:** Equavalent to `ip route add` command.
+
+```bash
+ $ sudo route add -net 192.168.0.1/24 gw 10.10.12.3
+```
+
+**Remove a route:** Equavalent to `ip route delete` command.
+
+```bash
+ $ sudo route del -net 192.168.0.1/24
+```
+5. **ping:** the `ping` command is used to check whether a packet can reach to the destination host or not.
+
+```bash
+ $ ping google.com
+```
+
+6. **whois:** The `Whois` command is used to get whois information of a domain.
+
+```bash
+ $ whois google.com
+```
+7. **traceroute:** The `traceroute` command is used to see how packets are getting routed.
+
+```bash
+ $ traceroute google.com
+```
+
+8. **netstat:** The `netstat` command is used to show the detailed information about the network.
+
+```bash
+ $ netstat -at
+```
+
+9. **tcpdump:** The `tcpdump` is to monitor packet activities. It will not be available by default in the operating
+system. It can be installed by `sudo apt install tcpdump` command.
+
+```bash
+ $ sudo tcpdump -i wlan0
+```
+10. **dig:** The `dig` command is used to view the DNS information. It is equavalent to `nslookup` command.
+
+```bash
+ $ dig www.google.com
+```
+
+11. **nslookup:** The `nslookup` command can be also useful in case of DNS information. It is equavalent to `dig` command.
+
+```bash
+ $ nslookup www.google.com
+```
+
+12. **nmcli:** `nmcli` command allows one to control and modify NetworkManager
+
+```bash
+ $ sudo nmcli
+```
+For more usage information use `man nmcli` command.
+
+13. **dhclient:** The `dhclient` command is used to obtain a fresh IP from the DHCP server.
+
+```bash
+ $ sudo dhclient
+```
+
+14. **arp:** The `arp` command is used to show the arp cache of your device. 
+
+```bash
+ $ arp -a
+```
+
+
+
+
+
+
+
+
+
+2.  **Test connection to a remote machine:** Send an echo request to test connection of a remote machine.
+
+    ```cmd
+    ping <ip-address> or hostname
+
+    Example:
+    ping 10.0.0.11
+    ```
+
+3.  **Show IP Address:** Display ip address of a currennt machine
+
+    ```cmd
+    hostname -I
+    (OR)
+    ip addr show
+    ```
+
+4.  **Active ports:** Shows active or listening ports
+
+     ```cmd
+     netstat -pnltu
+     ```
+
+5.  **Find information about domain:** `whois` command is used to find out information about a domain, such as the owner of the domain, the owner’s contact information, and the nameservers used by domain.
+
+    ```cmd
+    whois [domain]
+
+    Example:
+    whois google.com
+    ```
+
+
+
+
+
+
+
+
+
 
 
 
