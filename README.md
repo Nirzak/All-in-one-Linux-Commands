@@ -11,7 +11,7 @@ This whole repository is created to track all the useful linux commands in one p
 | 1   | [**General Commands**](#General-commands)                               |
 | 2   | [**File Management Commands**](#File-management-commands)               |
 | 3   | [**Text Processing**](#Text-processing)                           |
-| 4   | [**Permission Commands**](#Permissions-based-commands)                  |
+| 4   | [**Permission Commands**](#Permission-commands)                  |
 | 5   | [**Networking Commands**](#Networking-commands)                         |
 | 6   | [**Package Installing Commands**](#installing-packages)                 |
 | 7   | [**Memory Usage Commands**](#Memory-usage)                              |
