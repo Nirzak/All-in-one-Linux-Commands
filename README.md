@@ -180,29 +180,29 @@ To unalias type,
 1. **pwd** The pwd(Present Working Directory) command is used to show current working directory.
 
    ```bash
-   $ pwd
-   /home/nirjas
+    $ pwd
+    /home/nirjas
    ```
 
 2. **ls**: The ls command is used to list directories and files. 
 
    1. Basic command to list files and directories exclusing hidden files:
 
-   ```bash
-    $ ls
-   ```
+      ```bash
+       $ ls
+      ```
 
    2. List all the files with hidden files and directories that will be denoted as . at the start of the file or directory names.:
 
-   ```bash
-    $ ls -a
-   ```
+      ```bash
+       $ ls -a
+      ```
 
    3. Use -la flag to list all the files with their permission details:
 
-   ```bash
-    $ ls -la
-   ```
+      ```bash
+       $ ls -la
+      ```
 
 3. **mkdir** The mkdir (make directory) command allows users to create directories or folders.
 
@@ -224,73 +224,75 @@ To unalias type,
 
    1. Remove empty directory:
 
-   ```bash
-    $ rmdir directoryName
-   ```
+      ```bash
+       $ rmdir directoryName
+      ```
 
    2. Remove multiple directories:
 
-   ```bash
-    $ rmdir dir1 dir2 dir3
-   ```
+      ```bash
+       $ rmdir dir1 dir2 dir3
+      ```
 
    3. Remove entire directory tree. This command is similar to `rmdir a/b/c a/b a`:
 
-   ```bash
-    $ rmdir -p a/b/c
-   ```
+      ```bash
+       $ rmdir -p a/b/c
+      ```
 
 5. **rm**: The rm (remove) command is used to remove files, directories, symbolic links etc from the file system.
+
    1. Remove file: The rm command is used to remove or delete a file.
 
-   ```bash
-    $ rm <filename> or <path of file>
-   ```
+      ```bash
+       $ rm <filename> or <path of file>
+      ```
 
    2. Remove file forcefully: The rm command with -f option is used to remove file without prompting for confirmation.
 
-   ```bash
-    $ rm -f filename
-   ```
+      ```bash
+       $ rm -f filename
+      ```
 
    3. Remove directory: The rm command with -r option is used to remove the directories that contains files. The -r flag is used to delete the contents recursively.
 
-   ```bash
-    $ rm -r directoryName
-   ```
+      ```bash
+       $ rm -r directoryName
+      ```
 
    4. Remove directory forcefully: The rm command with -rf option is used to forcefully remove directory recursively.
 
-   ```bash
-   rm -rf directoryName
-   ```
+      ```bash
+       rm -rf directoryName
+      ```
 
-6. **touch**: The touch command is used to create new empty files. Touch is also used to change timestamps on existing files and directories. 
+6. **touch**: The touch command is used to create new empty files. Touch is also used to change timestamps on existing files and directories.
+
    1. **Create a file:** You can create a single empty file using touch command.
 
-   ```bash
-    $ touch file1.txt
-   ```
+      ```bash
+       $ touch file1.txt
+      ```
 
    The above command will create a file titled file1.txt.
 
    2. **Create multiple files:** You can create the multiple numbers of files at the same time.
    
-   ```bash
-    $ touch file1 file2 file3
-   ```
+      ```bash
+       $ touch file1 file2 file3
+      ```
 
    3. **Change access time:** The touch command with `-a` option is used to change the access time of a file.
 
-   ```bash
-    $ touch -a file1.txt
-   ```
+      ```bash
+       $ touch -a file1.txt
+      ```
 
    4. **Change modification time:** The touch command with `-m` option is used to change the modified time.
 
-   ```bash
-    $ touch -m file_name
-   ```
+      ```bash
+       $ touch -m file_name
+      ```
 
    5. **Use timestamp of other file:** The touch command with `r` option is used to get timestamp of another file.
 
@@ -310,73 +312,73 @@ To unalias type,
 
    1. Copy file: The cp command is used to copy a file.
 
-   ```bash
-    $ cp file1 /home/nirjas/files
-   ```
+      ```bash
+       $ cp file1 /home/nirjas/files
+      ```
 
    In this example file1 will be copied to the files directory which is at "/home/nirjas/files" path.
 
    2. Copy directory: The cp command with -r option is used to copy whole directory with its files recursively.
 
-   ```bash
-    $ cp -r directory1 /home/nirjas/myfiles
-   ```
+      ```bash
+       $ cp -r directory1 /home/nirjas/myfiles
+      ```
 
    In this example the whole directory1 will be copied to myfiles directory.
 
    3. Copy files inside directory:
 
-   ```bash
-    $ cp -r dir1/* /home/nirjas/myfiles
-   ```
+      ```bash
+       $ cp -r dir1/* /home/nirjas/myfiles
+      ```
 
    In the above example, all the files inside dir1 will be copied myfiles folder. The dir1 will not be copied. Only the files inside it will be copied. You can also specify which files to copy by the following example.
 
-   ```bash
-    $ cp -r dir1/*.txt /home/nirjas/myfiles
-   ```
+      ```bash
+       $ cp -r dir1/*.txt /home/nirjas/myfiles
+      ```
 
    The above example will copy only text files. 
 
    4. Copy files without overriding: The cp command with -i will show you interactive prompt to replace if the destination directory already has the file.
 
-   ```bash
-    $ cp -i myfile /home/nirjas/files
-   ```
+      ```bash
+       $ cp -i myfile /home/nirjas/files
+      ```
 
 8. **mv**: The mv (copy) command usage is almost similar to the cp command and it is used to move or rename files or folders.
 
    1. Rename files: mv command is also used to rename files in the following way.
 
-   ```bash
-    $ mv oldname newname
-   ```
+      ```bash
+       $ mv oldname newname
+      ```
 
    In this example file1 will be copied to the files directory which is at "/home/nirjas/files" path.
 
    2. Move files:
 
-   ```bash
-    $ mv file.txt /home/nirjas/myfiles
-   ```
+      ```bash
+       $ mv file.txt /home/nirjas/myfiles
+      ```
 
    You can also move mutiple files in one command.
 
-   ```bash
-    $ mv file1 file2 file3 /home/nirjas/myfiles
-   ```
+      ```bash
+       $ mv file1 file2 file3 /home/nirjas/myfiles
+      ```
 
    3. Move Directories:
 
-   ```bash
-    $ mv dir1 /home/nirjas/myfiles
-   ``` 
+      ```bash
+       $ mv dir1 /home/nirjas/myfiles
+      ``` 
 
    4. Move files without overriding:
 
-   ```bash
-   mv -i myfile /home/nirjas/files
-   ```
+      ```bash
+       $ mv -i myfile /home/nirjas/files
+      ```
 
 9. **cat**: The cat command is used to view contents of single or multiple files, concatenate files and redirect output in terminal or files.
 
@@ -564,43 +566,44 @@ Some other useful regular expressions with grep are as follows.
 
    1. Matching any character: To match any character with a particular word the period (.) is used.
 
-   ```bash
-    $ grep "..rent" file.txt
-   ```
+      ```bash
+       $ grep "..rent" file.txt
+      ```
 
    The above command will match anything that has two characters and then the string `rent`
 
    2. Bracket Expressions: You can also specify mutiple words with a particular character by enclosing them
    with a bracket.
 
-   ```bash
-    $ grep "swe[ea]t" file.txt
-   ```
+      ```bash
+       $ grep "swe[ea]t" file.txt
+      ```
 
    The above command will match this two words `sweet` and `sweat`
 
    To find every line which starts with a capital letter,
-   ```bash
-    $ grep "^[A-Z]" file.txt
-   ```
+
+      ```bash
+       $ grep "^[A-Z]" file.txt
+      ```
 
    Instead of using character ranges POSIX classes can also be used for the above example,
 
-   ```bash
-    $ grep "^[[:upper:]]" file.txt
-   ```
+      ```bash
+       $ grep "^[[:upper:]]" file.txt
+      ```
 
    To find each line that contains an opening and closing parenthesis, with only letters and single spaces in between, the following expression can be used,
 
-   ```bash
-    $ grep "([A-Za-z ]*)" file.txt
-   ```
+      ```bash
+       $ grep "([A-Za-z ]*)" file.txt
+      ```
 
    To escape meta characters, the backslash character (\) in front of the characters are used.
 
-   ```bash
-    $ grep "^[A-Z].*\.$" file.txt
-   ```
+      ```bash
+       $ grep "^[A-Z].*\.$" file.txt
+      ```
 
    The above example will find any line that begins with a capital letter and ends with a period. But it escapes the ending period so that it represents a literal period.
 
@@ -630,6 +633,7 @@ Some other useful regular expressions with grep are as follows.
 
 
 ### Permission Commands
+
 Linux has four types of permissions.
 
    r = read
@@ -646,6 +650,7 @@ ii. **Group:** Group of users with the same access permissions to the file or di
 iii. **Other:** Applies to all other users on the system
 
 **Changing Permission:**
+
 The `chmod` command is used to change file or directory permissions. There are two types of usage of this command.
 
 1. **Absolute mode:** In this mode file permission is represented by an octal value.
@@ -674,7 +679,9 @@ The owners are represented in below table.
    | g | group |
    | o | other |
    | a | all |
+
 The permissions can be add, remove and assign by using mathematical symbols like as below.
+
 - `+` : Add permission
 - `-` : remove permission
 - `=` : Assign permission
@@ -884,69 +891,69 @@ system. It can be installed by `sudo apt install tcpdump` command.
 
 12. **nmcli:** `nmcli` command allows one to control and modify NetworkManager.
 
-**Checking overall status of Networkmanager:**
+   1. **Checking overall status of Networkmanager:**
 
-```bash
- $ sudo nmcli general status 
-```
+      ```bash
+       $ sudo nmcli general status 
+      ```
 
-**Viewing all connections:**
+   2. **Viewing all connections:**
 
-```bash
- $ sudo nmcli connection show 
-```
+      ```bash
+       $ sudo nmcli connection show 
+      ```
 
-**Viewing detail information about a connection:**
+   3. **Viewing detail information about a connection:**
 
-```bash
- $ sudo nmcli -p connection show connection-name
-```
+      ```bash
+       $ sudo nmcli -p connection show connection-name
+      ```
 
-**Adding an interface:** To add an interface device type the following command.
+   4. **Adding an interface:** To add an interface device type the following command.
 
-```bash
- $ sudo nmcli connection add ifname <interface-name> type <connection-type> con-name <connection-name> ipv4.addresses <ip with subnet mask> ipv4.gateway <gateway> ipv4.dns <dns> ipv4.method <method>
-```
+      ```bash
+       $ sudo nmcli connection add ifname <interface-name> type <connection-type> con-name <connection-name> ipv4.addresses <ip with subnet mask> ipv4.gateway <gateway> ipv4.dns <dns> ipv4.method <method>
+      ```
 
-For example to set e static IP we will use the following command.
+   For example to set e static IP we will use the following command.
 
-```bash
- $ sudo nmcli connection add ifname enmp0s3 type ethernet con-name enp0s3 ipv4.addresses 192.168.0.108/24 ipv4.gateway 192.168.0.1 ipv4.dns 8.8.8.8 ipv4.method manual
-```
+      ```bash
+       $ sudo nmcli connection add ifname enmp0s3 type ethernet con-name enp0s3 ipv4.addresses 192.168.0.108/24 ipv4.gateway 192.168.0.1 ipv4.dns 8.8.8.8 ipv4.method manual
+      ```
 
-**Modifying an interface:**
+   5. **Modifying an interface:**
 
-```bash
- $ sudo nmcli connection modify enp0s3 ipv4.addresses 192.168.0.110/24
-```
+      ```bash
+       $ sudo nmcli connection modify enp0s3 ipv4.addresses 192.168.0.110/24
+      ```
 
-**Changing wifi on or off:**
+   6. **Changing wifi on or off:**
 
-```bash
- $ sudo nmcli radio wifi (on or off )
-```
+      ```bash
+       $ sudo nmcli radio wifi (on or off )
+      ```
 
-**Up or Down a connection:**
+   7. **Up or Down a connection:**
 
-```bash
- $ sudo nmcli connection up connection-name
-```
+      ```bash
+       $ sudo nmcli connection up connection-name
+      ```
 
-```bash
- $ sudo nmcli connection down connection-name
-```
+      ```bash
+       $ sudo nmcli connection down connection-name
+      ```
 
-**Viewing list of wifi connections:**
+   8. **Viewing list of wifi connections:**
 
-```bash
- $ sudo nmcli device wifi list
-```
+      ```bash
+       $ sudo nmcli device wifi list
+      ```
 
-**Viewing connected WiFi Password:**
+   9. **Viewing connected WiFi Password:**
 
-```bash
- $ sudo nmcli device wifi show-password
-```
+      ```bash
+       $ sudo nmcli device wifi show-password
+      ```
 
 Nmcli is a most versatile terminal command and the most useful also. For more usage information use `man nmcli` command.
 
