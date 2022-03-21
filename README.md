@@ -776,6 +776,7 @@ or,
 ```
 
 8. **netstat:** The `netstat` command is used to show the detailed information about the network.
+for more info run `man netstat` command on terminal.
 
 ```bash
  $ netstat -at
@@ -804,12 +805,73 @@ system. It can be installed by `sudo apt install tcpdump` command.
  $ nslookup www.google.com
 ```
 
-12. **nmcli:** `nmcli` command allows one to control and modify NetworkManager
+12. **nmcli:** `nmcli` command allows one to control and modify NetworkManager.
+
+**Checking overall status of Networkmanager:**
 
 ```bash
- $ sudo nmcli
+ $ sudo nmcli general status 
 ```
-For more usage information use `man nmcli` command.
+
+**Viewing all connections:**
+
+```bash
+ $ sudo nmcli connection show 
+```
+
+**Viewing detail information about a connection:**
+
+```bash
+ $ sudo nmcli -p connection show connection-name
+```
+
+**Adding an interface:** To add an interface device type the following command.
+
+```bash
+ $ sudo nmcli connection add ifname <interface-name> type <connection-type> con-name <connection-name> ipv4.addresses <ip with subnet mask> ipv4.gateway <gateway> ipv4.dns <dns> ipv4.method <method>
+```
+
+For example to set e static IP we will use the following command.
+
+```bash
+ $ sudo nmcli connection add ifname enmp0s3 type ethernet con-name enp0s3 ipv4.addresses 192.168.0.108/24 ipv4.gateway 192.168.0.1 ipv4.dns 8.8.8.8 ipv4.method manual
+```
+
+**Modifying an interface:**
+
+```bash
+ $ sudo nmcli connection modify enp0s3 ipv4.addresses 192.168.0.110/24
+```
+
+**Changing wifi on or off:**
+
+```bash
+ $ sudo nmcli radio wifi (on or off )
+```
+
+**Up or Down a connection:**
+
+```bash
+ $ sudo nmcli connection up connection-name
+```
+
+```bash
+ $ sudo nmcli connection down connection-name
+```
+
+**Viewing list of wifi connections:**
+
+```bash
+ $ sudo nmcli device wifi list
+```
+
+**Viewing connected WiFi Password:**
+
+```bash
+ $ sudo nmcli device wifi show-password
+```
+
+Nmcli is a most versatile terminal command and the most useful also. For more usage information use `man nmcli` command.
 
 13. **dhclient:** The `dhclient` command is used to obtain a fresh IP from the DHCP server.
 
