@@ -765,79 +765,79 @@ ifup is to enable a network device and ifdown will disable it.
 3. **ip command:** the `ip` command is a versatile command and is the replacement for both `ifconfig` command
 and `route` command. It can be used for mutiple puposes.
 
-**Showing interfaces:** Equavalent to `ifconfig` command.
+   1. **Showing interfaces:** Equavalent to `ifconfig` command.
 
-```bash
- $ ip link show
-```
+      ```bash
+       $ ip link show
+      ```
 
-**Showing interface statistics:** 
+   2. **Showing interface statistics:** 
 
-```bash
- $ ip -s link show eth0
-```
+      ```bash
+       $ ip -s link show eth0
+      ```
 
-**Showing ip address assigned to interfaces:** 
+   3. **Showing ip address assigned to interfaces:** 
 
-```bash
- $ ip address show
-```
-or,
+      ```bash
+       $ ip address show
+      ```
+   or,
 
-```bash
- $ ip addr show
-```
+      ```bash
+       $ ip addr show
+      ```
 
-**To bring interfaces up and down:** Equlavalent to `ifup` and `ifdown` command
+   4. **To bring interfaces up and down:** Equlavalent to `ifup` and `ifdown` command
 
-```bash
- $ ip link set eth0 up
- $ ip link set eth0 down
-```
+      ```bash
+       $ ip link set eth0 up
+       $ ip link set eth0 down
+      ```
 
-**Add an IP address to an interface:** 
+   5. **Add an IP address to an interface:** 
 
-```bash
- $ ip address add 192.168.0.1/24 dev eth0
-```
+      ```bash
+       $ ip address add 192.168.0.1/24 dev eth0
+      ```
 
-**Showing routing table:** Equavalent to `route` command.
+   6. **Showing routing table:** Equavalent to `route` command.
 
-```bash
- $ ip route list
-```
+      ```bash
+       $ ip route list
+      ```
 
-**Add a route:** Equavalent to `route add` command.
+   7. **Add a route:** Equavalent to `route add` command.
 
-```bash
- $ ip route add 192.168.0.1/24 via 10.10.12.3
-```
+      ```bash
+       $ ip route add 192.168.0.1/24 via 10.10.12.3
+      ```
 
-**Remove a route:** Equavalent to `route del` command.
+   8. **Remove a route:** Equavalent to `route del` command.
 
-```bash
- $ ip route delete 192.168.0.1/24
-```
+      ```bash
+       $ ip route delete 192.168.0.1/24
+      ```
 
 4. **route command:** The `route` command is used to command is used to show, add or delete routes.
 
-**Showing routing table:** Equavalent to `route` command.
+   1. **Showing routing table:** Equavalent to `route` command.
 
-```bash
- $ sudo route -n
-```
+      ```bash
+       $ sudo route -n
+      ```
 
-**Add a route:** Equavalent to `ip route add` command.
+   2. **Add a route:** Equavalent to `ip route add` command.
 
-```bash
- $ sudo route add -net 192.168.0.1/24 gw 10.10.12.3
-```
+      ```bash
+       $ sudo route add -net 192.168.0.1/24 gw 10.10.12.3
+      ```
 
-**Remove a route:** Equavalent to `ip route delete` command.
+   3. **Remove a route:** Equavalent to `ip route delete` command.
 
-```bash
- $ sudo route del -net 192.168.0.1/24
-```
+      ```bash
+       $ sudo route del -net 192.168.0.1/24
+      ```
 
 5. **ping:** the `ping` command is used to check whether a packet can reach to the destination host or not.
 
@@ -915,7 +915,7 @@ system. It can be installed by `sudo apt install tcpdump` command.
        $ sudo nmcli connection add ifname <interface-name> type <connection-type> con-name <connection-name> ipv4.addresses <ip with subnet mask> ipv4.gateway <gateway> ipv4.dns <dns> ipv4.method <method>
       ```
 
-   For example to set e static IP we will use the following command.
+      For example to set e static IP we will use the following command.
 
       ```bash
        $ sudo nmcli connection add ifname enmp0s3 type ethernet con-name enp0s3 ipv4.addresses 192.168.0.108/24 ipv4.gateway 192.168.0.1 ipv4.dns 8.8.8.8 ipv4.method manual
