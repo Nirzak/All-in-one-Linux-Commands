@@ -891,19 +891,19 @@ system. It can be installed by `sudo apt install tcpdump` command.
 
 12. **nmcli:** `nmcli` command allows one to control and modify NetworkManager.
 
-   1. **Checking overall status of Networkmanager:**
+   1. **Overall status of Networkmanager:** To check overall status of the networkmanager. use the following command.
 
       ```bash
        $ sudo nmcli general status 
       ```
 
-   2. **Viewing all connections:**
+   2. **Viewing all connections:** To view all connections of the PC.
 
       ```bash
        $ sudo nmcli connection show 
       ```
 
-   3. **Viewing detail information about a connection:**
+   3. **Detailed information about a connection:** To view detail information about a connection
 
       ```bash
        $ sudo nmcli -p connection show connection-name
@@ -921,19 +921,19 @@ system. It can be installed by `sudo apt install tcpdump` command.
        $ sudo nmcli connection add ifname enmp0s3 type ethernet con-name enp0s3 ipv4.addresses 192.168.0.108/24 ipv4.gateway 192.168.0.1 ipv4.dns 8.8.8.8 ipv4.method manual
       ```
 
-   5. **Modifying an interface:**
+   5. **Modifying an interface:** To modify an interface use the following command.
 
       ```bash
        $ sudo nmcli connection modify enp0s3 ipv4.addresses 192.168.0.110/24
       ```
 
-   6. **Changing wifi on or off:**
+   6. **Changing wifi on or off:** Turning wifi on or off.
 
       ```bash
        $ sudo nmcli radio wifi (on or off )
       ```
 
-   7. **Up or Down a connection:**
+   7. **Up or Down a connection:** To enable or disable a connection.
 
       ```bash
        $ sudo nmcli connection up connection-name
@@ -943,13 +943,13 @@ system. It can be installed by `sudo apt install tcpdump` command.
        $ sudo nmcli connection down connection-name
       ```
 
-   8. **Viewing list of wifi connections:**
+   8. **Viewing list of wifi connections:** To view the list of all nearby wifi connections.
 
       ```bash
        $ sudo nmcli device wifi list
       ```
 
-   9. **Viewing connected WiFi Password:**
+   9. **Viewing connected WiFi Password:** To view the stored password of an active wifi connection.
 
       ```bash
        $ sudo nmcli device wifi show-password
