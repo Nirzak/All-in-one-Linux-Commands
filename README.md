@@ -891,17 +891,17 @@ system. It can be installed by `sudo apt install tcpdump` command.
 
 12. **nmcli:** `nmcli` command allows one to control and modify NetworkManager.
 
-   1. **Overall status of Networkmanager:** To check overall status of the networkmanager. use the following command.
+      1. **Overall status of Networkmanager:** To check overall status of the networkmanager. use the following command.
 
-      ```bash
-       $ sudo nmcli general status 
-      ```
+         ```bash
+          $ sudo nmcli general status 
+         ```
 
-   2. **Viewing all connections:** To view all connections of the PC.
+      2. **Viewing all connections:** To view all connections of the PC.
 
-      ```bash
-       $ sudo nmcli connection show 
-      ```
+         ```bash
+          $ sudo nmcli connection show 
+         ```
 
    3. **Detailed information about a connection:** To view detail information about a connection
 
