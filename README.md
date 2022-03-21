@@ -11,9 +11,9 @@ This whole repository is created to track all the useful linux commands in one p
 | 1   | [**General Commands**](#General-commands)                               |
 | 2   | [**File Management Commands**](#File-management-commands)               |
 | 3   | [**Text Processing**](#Text-processing)                           |
-| 4   | [**Permission Commands**](#Permission-commands)                  |
+| 4   | [**Permission Based Commands**](#Permission-commands)                  |
 | 5   | [**Networking Commands**](#Networking-commands)                         |
-| 6   | [**Package Installing Commands**](#installing-packages)                 |
+| 6   | [**Package Management Commands**](#managing-packages)                 |
 | 7   | [**Memory Usage Commands**](#Memory-usage)                              |
 | 8   | [**System and Hardware information**](#system-and-hardware-information) |
 | 9   | [**System**](#system)                                                   |
@@ -173,7 +173,7 @@ To unalias type,
 
 ### File Management Commands
 
-1. **pwd** The pwd(Present Working Directory) command is used to show current working directory. 
+1. **pwd** The pwd(Present Working Directory) command is used to show current working directory.
    ```bash
    $ pwd
    /home/nirjas
@@ -900,6 +900,112 @@ To view the firewall setting with all information use the following command.
 
 ```bash
  $ nmap -sA www.nirzash.me
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Managing packages
+
+1. **Install package:**
+
+```bash
+ $ sudo yum install package_name
+```
+
+2. **Package description:**
+The info command is used to display brief details about a package.
+
+```bash
+ $ yum info package_name
+```
+
+3. **Uninstall package:**
+The remove command is used to remove or uninstall package name.
+```bash
+ $ sudo yum remove package_name
+```
+
+4. **Package dependencies:**
+The deplist command is used to display the dependencies of a package.
+
+```bash
+ $ yum deplist package_name
+```
+
+5. **Search for packages:**
+To search for packgaes use the following command.
+
+```bash
+ $ yum search keyword
+```
+
+6. **Updating all packages:**
+The following command will check for updates for the installed packages.
+
+```bash
+ $ yum check-update
+```
+
+To download and install the updates run the following command.
+
+```bash
+ $ sudo yum update
+```
+
+7. **Clean the packages:**
+
+```bash
+ $ sudo yum clean packages
+```
+
+To clean the metadata of the packages
+
+```bash
+ $ sudo yum clean metadata
+```
+
+To clean the dbcache of the packages
+
+```bash
+ $ sudo yum clean dbcache
+```
+
+To rebuild the cache again use the following command.
+
+```bash
+ $ sudo yum makecache
+```
+
+8. **Install package from local file:**
+
+It is also possible to install package from local file named package_name.rpm.
+
+```bash
+ $ sudo rpm -i package_name.rpm
+```
+
+9. **Check if a package is installed or not:**
+
+To check if a package is installed or not use the following command.
+
+```bash
+ $ sudo rpm -qa | grep package_name
+```
+
+10. **Removing installed packages using RPM:**
+
+```bash
+ $ sudo rpm -e package_name
+```
+
+11. **Install package from source code:**
+
+```bash
+ $ tar zxvf sourcecode.tar.gz
+ $ cd sourcecode
+ $ ./configure
+ $ make
+ $ make install
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
