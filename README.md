@@ -101,9 +101,11 @@ This whole repository is created to track all the useful linux commands in one p
    ```
 
 9. **Man:** This command shows the documentation of every command of linux.
+
    ```bash
     $ man ls
    ```
+
 10. **Date:** Shows date
 
 ```bash
@@ -156,7 +158,9 @@ This whole repository is created to track all the useful linux commands in one p
  -rw-r--r-- 1 nirjas nirjas  220 Apr 18  2019 .bash_logout
  -rw-r--r-- 1 nirjas nirjas 3564 Oct 27 16:56 .bashrc
 ```
+
 To unalias type,
+
 `unalias <your alias name>`
 
 ```bash
@@ -174,11 +178,13 @@ To unalias type,
 ### File Management Commands
 
 1. **pwd** The pwd(Present Working Directory) command is used to show current working directory.
+
    ```bash
    $ pwd
    /home/nirjas
    ```
-3. **ls**: The ls command is used to list directories and files. 
+
+2. **ls**: The ls command is used to list directories and files. 
 
    1. Basic command to list files and directories exclusing hidden files:
 
@@ -198,7 +204,7 @@ To unalias type,
     $ ls -la
    ```
 
-2. **mkdir** The mkdir (make directory) command allows users to create directories or folders.
+3. **mkdir** The mkdir (make directory) command allows users to create directories or folders.
 
    ```bash
     $ mkdir mydir
@@ -214,7 +220,7 @@ To unalias type,
     ~/home/nirjas/dir1/dir2/dir3$
    ```
 
-3. **rmdir**: The rmdir (remove directories) is used to remove empty directories. To delete directories that contains files and fodlers refer to `rm -r directoryName`.
+4. **rmdir**: The rmdir (remove directories) is used to remove empty directories. To delete directories that contains files and fodlers refer to `rm -r directoryName`.
 
    1. Remove empty directory:
 
@@ -234,34 +240,38 @@ To unalias type,
     $ rmdir -p a/b/c
    ```
 
-4. **rm**: The rm (remove) command is used to remove files, directories, symbolic links etc from the file system.
+5. **rm**: The rm (remove) command is used to remove files, directories, symbolic links etc from the file system.
    1. Remove file: The rm command is used to remove or delete a file.
 
    ```bash
     $ rm <filename> or <path of file>
    ```
+
    2. Remove file forcefully: The rm command with -f option is used to remove file without prompting for confirmation.
 
    ```bash
     $ rm -f filename
    ```
+
    3. Remove directory: The rm command with -r option is used to remove the directories that contains files. The -r flag is used to delete the contents recursively.
 
    ```bash
     $ rm -r directoryName
    ```
+
    4. Remove directory forcefully: The rm command with -rf option is used to forcefully remove directory recursively.
 
    ```bash
    rm -rf directoryName
    ```
 
-5. **touch**: The touch command is used to create new empty files. Touch is also used to change timestamps on existing files and directories. 
+6. **touch**: The touch command is used to create new empty files. Touch is also used to change timestamps on existing files and directories. 
    1. **Create a file:** You can create a single empty file using touch command.
 
    ```bash
     $ touch file1.txt
    ```
+
    The above command will create a file titled file1.txt.
 
    2. **Create multiple files:** You can create the multiple numbers of files at the same time.
@@ -269,16 +279,19 @@ To unalias type,
    ```bash
     $ touch file1 file2 file3
    ```
+
    3. **Change access time:** The touch command with `-a` option is used to change the access time of a file.
 
    ```bash
     $ touch -a file1.txt
    ```
+
    4. **Change modification time:** The touch command with `-m` option is used to change the modified time.
 
    ```bash
     $ touch -m file_name
    ```
+
    5. **Use timestamp of other file:** The touch command with `r` option is used to get timestamp of another file.
 
    ```bash
@@ -293,49 +306,60 @@ To unalias type,
     $ touch -t 1911010000 file_name
    ```
 
-6. **cp**: The cp (copy) command is used to copy files and directories from one location to another location of the system.
+7. **cp**: The cp (copy) command is used to copy files and directories from one location to another location of the system.
+
    1. Copy file: The cp command is used to copy a file.
 
    ```bash
     $ cp file1 /home/nirjas/files
    ```
+
    In this example file1 will be copied to the files directory which is at "/home/nirjas/files" path.
+
    2. Copy directory: The cp command with -r option is used to copy whole directory with its files recursively.
 
    ```bash
     $ cp -r directory1 /home/nirjas/myfiles
    ```
+
    In this example the whole directory1 will be copied to myfiles directory.
+
    3. Copy files inside directory:
 
    ```bash
     $ cp -r dir1/* /home/nirjas/myfiles
    ```
+
    In the above example, all the files inside dir1 will be copied myfiles folder. The dir1 will not be copied. Only the files inside it will be copied. You can also specify which files to copy by the following example.
 
    ```bash
     $ cp -r dir1/*.txt /home/nirjas/myfiles
    ```
+
    The above example will copy only text files. 
 
    4. Copy files without overriding: The cp command with -i will show you interactive prompt to replace if the destination directory already has the file.
 
    ```bash
-   cp -i myfile /home/nirjas/files
+    $ cp -i myfile /home/nirjas/files
    ```
 
-7. **mv**: The mv (copy) command usage is almost similar to the cp command and it is used to move or rename files or folders.
+8. **mv**: The mv (copy) command usage is almost similar to the cp command and it is used to move or rename files or folders.
+
    1. Rename files: mv command is also used to rename files in the following way.
 
    ```bash
     $ mv oldname newname
    ```
+
    In this example file1 will be copied to the files directory which is at "/home/nirjas/files" path.
+
    2. Move files:
 
    ```bash
     $ mv file.txt /home/nirjas/myfiles
    ```
+
    You can also move mutiple files in one command.
 
    ```bash
@@ -353,16 +377,18 @@ To unalias type,
    ```bash
    mv -i myfile /home/nirjas/files
    ```
-8. **cat**: The cat command is used to view contents of single or multiple files, concatenate files and redirect output in terminal or files.
+
+9. **cat**: The cat command is used to view contents of single or multiple files, concatenate files and redirect output in terminal or files.
 
    ```bash
     $ cat file1 file2
    ```
 
-9. **file**: The file command is used to know the file type.
+10. **file**: The file command is used to know the file type.
 
    ```bash
     $ file file1.txt
+
     file1.txt: ASCII text
    ```
 
@@ -375,12 +401,14 @@ To unalias type,
    ```bash
     $ cut -c 4 file.txt
    ```
+
    This will show 4th character from each line of that file. You can also modify it in the follwing way to specify
    your range.
 
    ```bash
     $ cut -c 4-10 file.txt
    ```
+
    Here the character range is 4-10.
    To cut off according to fields, -f option is used.
 
@@ -397,39 +425,48 @@ it merges the lines of the file in one line. For example suppose `file1.txt` has
     is
     awesome
    ```
+
    Now apply the following command on the text file.
 
    ```bash
     $ paste -s file1.txt
    ```
+
    The output will be 'Terminal  is  awesome'. By default it is using TABs as the delimiter.
    But you can set custom delimiter as the following example.
 
    ```bash
     $ paste -d ' ' -s file1.txt
    ```
+
    The above example will use spaces the delimiter.
 
 3. **head**: the head command is used the view the first 10 lines of a text file. It's very useful the see the contents of
 a huge log files.
+
    ```bash
     $ head /var/log/syslog
    ```
+
 You can also define how many lines you want to view by the -n option.
+
    ```bash
     $ head -n 20 /var/log/syslog
    ```
-3. **tail**: The tail command is almost similar to the head command. But instead of showing the first 10 lines,
+
+4. **tail**: The tail command is almost similar to the head command. But instead of showing the first 10 lines,
 it will show you the last 10 lines as default.
+
    ```bash
     $ tail /var/log/syslog
    ```
 
-4. **less**: When browsing the long log files you can use another very useful command which is called `less`. If a file content is very large then less is used to view the file contents as a paged manner.
+5. **less**: When browsing the long log files you can use another very useful command which is called `less`. If a file content is very large then less is used to view the file contents as a paged manner.
 
    ```bash
     $ less /var/log/syslog
    ```
+
    Use the following command to navigate through less: <br />
    q - Used to quit out of less and go back to your shell.<br />
    Page up, Page down, Up and Down - Navigate using the arrow keys and page keys.<br/>
@@ -438,27 +475,30 @@ it will show you the last 10 lines as default.
    /search - You can search for specific text inside the text document. Prefacing the words you want to search with / <br />
    h - If you need a little help about how to use less while you’re in less, use help.
 
-5. **expand and unexpand**: expand is used to convert all the TABs in a text file to spaces.
+6. **expand and unexpand**: expand is used to convert all the TABs in a text file to spaces.
 
    ```bash
     $ expand file1.txt
    ```
+
 To convert the spaces back to TABs. Use the unexpand command.
 
    ```bash
     $ unexpand -a file1.txt
    ```
-5. **sort**: The sort command is used to sort the lines in a text file.
+7. **sort**: The sort command is used to sort the lines in a text file.
 
    ```bash
     $ sort file1.txt
    ```
+
 To do a reverse sort the -r option is used.
 
    ```bash
     $ sort -r file1.txt
    ```
-6. **tr**: the tr (translate) command is used to translate a set of character to another one.
+
+8. **tr**: the tr (translate) command is used to translate a set of character to another one.
 The following example will convert all lowercase character to uppercase one.
 
    ```bash
@@ -466,16 +506,18 @@ The following example will convert all lowercase character to uppercase one.
     terminal
     TERMINAL
    ```
-7. **uniq**: Just as the name says it it, the uniq (Unique) command is used to remove all the duplicate texts from a file.
+
+9. **uniq**: Just as the name says it it, the uniq (Unique) command is used to remove all the duplicate texts from a file.
 
    ```bash
     $ uniq file1.txt
    ```
-8. **wc**: The wc command is used to show count of words, lines and bytes from file respectively.
+10. **wc**: The wc command is used to show count of words, lines and bytes from file respectively.
 
    ```bash
     $ wc file1.txt
    ```
+
 To see only the line counts use the following.
 
    ```bash
@@ -483,28 +525,32 @@ To see only the line counts use the following.
    ```
 Similarly, -w, -c can be used to show only count of words and bytes respectively.
 
-9. **grep**: When it comes to text processing or filtering results of other commands, grep is probably the most used
+11. **grep**: When it comes to text processing or filtering results of other commands, grep is probably the most used
 command in such cases. The main syntax is following.
 
    ```bash
     $ grep pattern file
    ```
+
 You can also defines the patterns that are case sensitive by -i flag.
 
    ```bash
     $ grep -i pattern file
    ```
+
 Grep can also be used with commands as a pipeline.
 
    ```bash
     $ ls /nirjas/home | grep -i file1
    ```
+
 The above command will show the file1 from /nirjas/home directory.
 To search for the lines which doesn't contain the particular keyword use the -v option.
 
    ```bash
     $ ps aux | grep -v grep
    ```
+
 The above example will ignore all the grep processes and shows the others. 
 
 Grep can also be used with regular expressions.
@@ -512,6 +558,7 @@ Grep can also be used with regular expressions.
    ```bash
     $ grep "one$" file1.txt
    ```
+
 The above command will show the lines which are ending the word `one`.
 Some other useful regular expressions with grep are as follows.
 
@@ -520,6 +567,7 @@ Some other useful regular expressions with grep are as follows.
    ```bash
     $ grep "..rent" file.txt
    ```
+
    The above command will match anything that has two characters and then the string `rent`
 
    2. Bracket Expressions: You can also specify mutiple words with a particular character by enclosing them
@@ -528,27 +576,32 @@ Some other useful regular expressions with grep are as follows.
    ```bash
     $ grep "swe[ea]t" file.txt
    ```
+
    The above command will match this two words `sweet` and `sweat`
 
    To find every line which starts with a capital letter,
    ```bash
     $ grep "^[A-Z]" file.txt
    ```
+
    Instead of using character ranges POSIX classes can also be used for the above example,
 
    ```bash
     $ grep "^[[:upper:]]" file.txt
    ```
+
    To find each line that contains an opening and closing parenthesis, with only letters and single spaces in between, the following expression can be used,
 
    ```bash
     $ grep "([A-Za-z ]*)" file.txt
    ```
+
    To escape meta characters, the backslash character (\) in front of the characters are used.
 
    ```bash
     $ grep "^[A-Z].*\.$" file.txt
    ```
+
    The above example will find any line that begins with a capital letter and ends with a period. But it escapes the ending period so that it represents a literal period.
 
    3. Extended Regex: To use extended regular expression the -E option is used.
@@ -557,6 +610,7 @@ Some other useful regular expressions with grep are as follows.
    ```bash
     $ grep -E "(Color|Colour)" file.txt
    ``` 
+
    The above example will find either `Color` or `Colour` from the text.
 
    To find any words between chracter range, enclose the range with `{ }` brackets.
@@ -571,7 +625,9 @@ Some other useful regular expressions with grep are as follows.
    ```bash
     $ sudo grep -vE '^(#|$)'
    ```
+
    It's very useful to find lines in a big configuration file.
+
 
 ### Permission Commands
 Linux has four types of permissions.
@@ -591,6 +647,7 @@ iii. **Other:** Applies to all other users on the system
 
 **Changing Permission:**
 The `chmod` command is used to change file or directory permissions. There are two types of usage of this command.
+
 1. **Absolute mode:** In this mode file permission is represented by an octal value.
 The numeric representation of the values are the following.
 - 4: read permission
@@ -600,6 +657,7 @@ The numeric representation of the values are the following.
 ```bash
  $ sudo chmod 755 myfile
 ```
+
 The above commands means the following.
 7 = 4 + 2 + 1, 7 is the user permissions and it has read, write and execute permissions
 
@@ -624,26 +682,31 @@ The permissions can be add, remove and assign by using mathematical symbols like
 ```bash
  $ chmod u+x file
 ```
+
 The above command will add execute permission to user. Similarly, You can add or remove permission like below examples.
 
 ```bash
  $ chmod u-x file
 ```
+
 Removes execute permission from user.
 
 ```bash
  $ chmod ug+x file
 ```
+
 Adds execute permission to both user and group.
 
 ```bash
  $ chmod g-w file
 ```
+
 Removes write permission from group. 
 
 ```bash
  $ chmod o+r file
 ```
+
 Add read permission to others. 
 
 **Changing Ownership:**
@@ -653,16 +716,21 @@ Add read permission to others.
 ```bash
  $ chown user file
 ```
+
 or,
+
 ```bash
  $ chown username:groupname file
 ```
+
 **2. Group ownership:** Group ownership can be modified by using the `chgrp` command.
 
 ```bash
  $ chgrp groupname file
 ```
+
 **[⬆ Back to Top](#table-of-contents)**
+
 
 ### Networking Commands
 
@@ -671,17 +739,20 @@ or,
 ```bash
  $ ifconfig -a
 ```
+
 To create an interface and bring it up use the following command.
 
 ```bash
  $ ifconfig eth0 192.168.0.1 netmask 255.255.255.0 up
 ```
+
 2. **ifup and ifdown:**
 
 ```bash
  $ ifup eth0
  $ ifdown eth0
 ```
+
 ifup is to enable a network device and ifdown will disable it.
 
 3. **ip command:** the `ip` command is a versatile command and is the replacement for both `ifconfig` command
@@ -722,6 +793,7 @@ or,
 ```bash
  $ ip address add 192.168.0.1/24 dev eth0
 ```
+
 **Showing routing table:** Equavalent to `route` command.
 
 ```bash
@@ -739,6 +811,7 @@ or,
 ```bash
  $ ip route delete 192.168.0.1/24
 ```
+
 4. **route command:** The `route` command is used to command is used to show, add or delete routes.
 
 **Showing routing table:** Equavalent to `route` command.
@@ -758,6 +831,7 @@ or,
 ```bash
  $ sudo route del -net 192.168.0.1/24
 ```
+
 5. **ping:** the `ping` command is used to check whether a packet can reach to the destination host or not.
 
 ```bash
@@ -769,6 +843,7 @@ or,
 ```bash
  $ whois google.com
 ```
+
 7. **traceroute:** The `traceroute` command is used to see how packets are getting routed.
 
 ```bash
@@ -781,6 +856,7 @@ for more info run `man netstat` command on terminal.
 ```bash
  $ netstat -at
 ```
+
 To view the active ports of the device use the following command.
 
 ```bash
@@ -793,6 +869,7 @@ system. It can be installed by `sudo apt install tcpdump` command.
 ```bash
  $ sudo tcpdump -i wlan0
 ```
+
 10. **dig:** The `dig` command is used to view the DNS information. It is equavalent to `nslookup` command.
 
 ```bash
