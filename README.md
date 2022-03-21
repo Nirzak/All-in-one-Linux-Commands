@@ -903,57 +903,57 @@ system. It can be installed by `sudo apt install tcpdump` command.
           $ sudo nmcli connection show 
          ```
 
-   3. **Detailed information about a connection:** To view detail information about a connection
+      3. **Detailed information about a connection:** To view detail information about a connection
 
-      ```bash
-       $ sudo nmcli -p connection show connection-name
-      ```
+         ```bash
+          $ sudo nmcli -p connection show connection-name
+         ```
 
-   4. **Adding an interface:** To add an interface device type the following command.
+      4. **Adding an interface:** To add an interface device type the following command.
 
-      ```bash
-       $ sudo nmcli connection add ifname <interface-name> type <connection-type> con-name <connection-name> ipv4.addresses <ip with subnet mask> ipv4.gateway <gateway> ipv4.dns <dns> ipv4.method <method>
-      ```
+         ```bash
+          $ sudo nmcli connection add ifname <interface-name> type <connection-type> con-name <connection-name> ipv4.addresses <ip with subnet mask> ipv4.gateway <gateway> ipv4.dns <dns> ipv4.method <method>
+         ```
 
-      For example to set e static IP we will use the following command.
+         For example to set e static IP we will use the following command.
 
-      ```bash
-       $ sudo nmcli connection add ifname enmp0s3 type ethernet con-name enp0s3 ipv4.addresses 192.168.0.108/24 ipv4.gateway 192.168.0.1 ipv4.dns 8.8.8.8 ipv4.method manual
-      ```
+         ```bash
+          $ sudo nmcli connection add ifname enmp0s3 type ethernet con-name enp0s3 ipv4.addresses 192.168.0.108/24 ipv4.gateway 192.168.0.1 ipv4.dns 8.8.8.8 ipv4.method manual
+         ```
 
-   5. **Modifying an interface:** To modify an interface use the following command.
+      5. **Modifying an interface:** To modify an interface use the following command.
 
-      ```bash
-       $ sudo nmcli connection modify enp0s3 ipv4.addresses 192.168.0.110/24
-      ```
+         ```bash
+          $ sudo nmcli connection modify enp0s3 ipv4.addresses 192.168.0.110/24
+         ```
 
-   6. **Changing wifi on or off:** Turning wifi on or off.
+      6. **Changing wifi on or off:** Turning wifi on or off.
 
-      ```bash
-       $ sudo nmcli radio wifi (on or off )
-      ```
+         ```bash
+          $ sudo nmcli radio wifi (on or off )
+         ```
 
-   7. **Up or Down a connection:** To enable or disable a connection.
+      7. **Up or Down a connection:** To enable or disable a connection.
 
-      ```bash
-       $ sudo nmcli connection up connection-name
-      ```
+         ```bash
+          $ sudo nmcli connection up connection-name
+         ```
 
-      ```bash
-       $ sudo nmcli connection down connection-name
-      ```
+         ```bash
+          $ sudo nmcli connection down connection-name
+         ```
 
-   8. **Viewing list of wifi connections:** To view the list of all nearby wifi connections.
+      8. **Viewing list of wifi connections:** To view the list of all nearby wifi connections.
 
-      ```bash
-       $ sudo nmcli device wifi list
-      ```
+         ```bash
+          $ sudo nmcli device wifi list
+         ```
 
-   9. **Viewing connected WiFi Password:** To view the stored password of an active wifi connection.
+      9. **Viewing connected WiFi Password:** To view the stored password of an active wifi connection.
 
-      ```bash
-       $ sudo nmcli device wifi show-password
-      ```
+         ```bash
+          $ sudo nmcli device wifi show-password
+         ```
 
 Nmcli is a most versatile terminal command and the most useful also. For more usage information use `man nmcli` command.
 
